@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+    <div class="sidebar">
+
+      <div class="card1">
+        <img src="../../assets/iamges/admin.png" alt="Avatar" style="width:100%">
+        <div class="container1">
+          <h4><b>John Doe</b></h4> 
+          <p>System Admin</p> 
+        </div>
+      </div>
+
+      <a class="active" routerLink="/dashboard">Home</a>
+      <a routerLink="/customer" >Customer</a>
+      <a routerLink="/item">Items</a>
+      <a routerLink="/order">Orders</a>
+      <a routerLink="/payment">Payments</a>
+      <a routerLink="/login"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+    </div>
+    
+    <div class="content">
+      <div class="header">
+        <h2>DashBoard</h2>
+      </div>
+    
+      <div class="row">
+        <div class="column">
+          <div class="card">
+            <h3>Customers</h3>
+            <p>Count</p>
+            <p>25</p>
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="card">
+            <h3>Items</h3>
+            <p>Count</p>
+            <p>47,000</p>
+          </div>
+        </div>
+        
+        <div class="column">
+          <div class="card">
+            <h3>Payment</h3>
+            <p>$</p>
+            <p>65,000</p>
+          </div>
+        </div>
+        
+        <div class="column">
+          <div class="card">
+            <h3>Orders</h3>
+            <p>Count</p>
+            <p>500</p>
+          </div>
+        </div>
+        <div class="chart"><canvas id="myChart"></canvas></div>
+      </div>
+    
+    </div>
+    </body>
+    
+    
+    
+    

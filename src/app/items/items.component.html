@@ -1,0 +1,93 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+    <div class="sidebar">
+      <div class="card1">
+        <img src="../../assets/iamges/admin.png" alt="Avatar" style="width:100%">
+        <div class="container1">
+          <h4><b>John Doe</b></h4> 
+          <p>System Admin</p> 
+        </div>
+      </div>
+      <a  routerLink="/dashboard">Home</a>
+      <a routerLink="/customer">Customer</a>
+      <a class="active" routerLink="/item">Items</a>
+      <a routerLink="/order">Orders</a>
+      <a routerLink="/payement">Payments</a>
+      <a routerLink="/login"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+    </div>
+    
+    <div class="content">
+      <div class="header">
+        <h2>Items Management</h2>
+      </div>
+      
+      <div class="flex-container">
+        <h1>Item Form</h1>
+        <form [formGroup]="itemForm" (ngSubmit)="SubmitForm()">
+            <hr>
+            <div class="form-group">
+                  <label for="itemcode">Item Code :</label>
+                  <input type="text" id="itemcode" name="itemcode" formControlName="itemcode" required >
+            </div>
+        
+            <div class="form-group">
+                  <label for="description">Description :</label>
+                  <input type="text" id="description" name="description" formControlName="description" required>
+            </div>
+        
+        
+            <div class="form-group">
+                <label for="qty">Quantity :</label>
+                <input type="text" id="qty" name="qty" formControlName="qty" required>
+                  
+            </div>
+
+            <div class="form-group">
+                <label for="unitprice">Unit Price :</label>
+                <input type="text"  id="unitprice" name="unitprice" formControlName="unitprice" required>  
+            </div>
+
+            <div class="form-group">
+                <label for="barcodeimg">BarCode Image - (Link) :</label>
+                <input type="text" id="barcodeimg" name="barcodeimg" formControlName="barcodeimg" required>  
+            </div>
+        
+            <div class="form-button">
+                <button type="submit">Create</button>
+            </div>
+            
+        </form>
+    </div>
+    
+    <div class="content-table">
+      <input type="text" id="search" name="search" placeholder="Search" [(ngModel)]="searchText">
+      <table>
+        <tr>
+          <th>Item Code</th>
+          <th>Description</th>
+          <th>Qty</th>
+          <th>Unit Price</th>
+          <th>Barcode</th>
+          <th>Modify</th>
+        </tr>
+        <tr *ngFor="let itemIndex of items | search:searchText">
+          <td>{{itemIndex.itemcode}}</td>
+          <td>{{itemIndex.description}}</td>
+          <td>{{itemIndex.qty}}</td>
+          <td>{{itemIndex.unitprice}}</td>
+          <td>{{itemIndex.barcodeimg}}</td>
+          <td>
+          <button type="button" (click)="GetItemById(itemIndex.id)"  class="btn btn-primary m-1"><i class="fa fa-pencil-square-o" style="font-size:14px"></i></button>
+          <button type="button" (click)="DeleteItemById(itemIndex.id)" class="btn btn-danger m-1"><i class="fa fa-trash" style="font-size:14px"></i></button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    
+    </div>
+    
+</body>
+    
+    
+    
+    

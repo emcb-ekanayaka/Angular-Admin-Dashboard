@@ -1,0 +1,161 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+    <div class="sidebar">
+      <div class="card1">
+        <img src="../../assets/iamges/admin.png" alt="Avatar" style="width:100%">
+        <div class="container1">
+          <h4><b>John Doe</b></h4> 
+          <p>System Admin</p> 
+        </div>
+      </div>
+      <a routerLink="/dashboard">Home</a>
+      <a routerLink="/customer">Customer</a>
+      <a routerLink="/item">Items</a>
+      <a class="active" routerLink="/order">Orders</a>
+      <a routerLink="/payment">Payments</a>
+      <a routerLink="/login"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+    </div>
+    
+    <div class="content">
+      <div class="header">
+        <h2>Order Management</h2>
+      </div>
+
+      <div class="r container white">
+        <div class="r box left side">
+            <div class="flex-order-container">
+                <h1>Order Form</h1>
+                <form [formGroup]="orderForm" (ngSubmit)="SubmitForm()">
+                    <hr>
+                    <div class="form-group">
+                        <label for="orderid">Order Id :</label>
+                        <input type="text" id="orderId" name="orderid" formControlName="orderid" required>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="customer">Customer :</label>
+                   <!--  [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedCustomerValue"-->
+                    <input class="customername" formControlName="customer" *ngIf="isChageCustomer">
+                      <select  (change)="onChangeCustomer($event)" >
+                          <option  value="" disabled selected hidden >---select---</option>
+                          <option  *ngFor="let customerValue of customers" [value]="customerValue.id">{{customerValue.username}}</option>
+                      </select> 
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="orderDate">Order Date :</label>
+                        <input type="date" id="orderDate" name="orderDate" formControlName="orderdate" required>
+                    </div>
+                
+                
+                    <div class="form-group">
+                        <label for="cost">Cost :</label>
+                        <input type="text" id="cost" name="cost" formControlName="cost" required>    
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="employee">Employee :</label>
+                        <input type="text"  id="employee" name="employee" formControlName="employee" required>  
+                    </div>
+                
+                </form>
+                </div>
+      
+        </div>
+
+        <div class="r box right side">
+          <div>
+            <form class="flex-item-container" (ngSubmit)="addInnerForm()">
+                <h1>Item Form</h1>
+                <hr>
+                <div class="form-group">
+                    <label for="item">Item :</label>
+
+                      <select (change)="onChangeItem($event)">
+                        <option value="" disabled selected hidden>Select a Item</option>
+                        <option *ngFor="let itemValue of items" [value]="itemValue.id">{{itemValue.itemcode}}</option>
+                      </select>
+                    
+                    <button type="submit">Add</button> 
+                </div>    
+            </form>
+
+            <div class="content-table" >
+              <table>
+                <tr>
+                  <th>Item Name</th>
+                  <th>Modify</th>
+                </tr>
+
+                <tbody *ngIf="isSubmitted">
+                  <tr *ngFor="let icode of selectedItems">
+                    <td>{{icode.itemcode}}</td>
+                    <td>
+                      <button type="button" (click)="RemovItemById(icode.id)" class="btn btn-danger m-1"><i class="fa fa-trash" style="font-size:14px"></i></button>
+                    </td>
+                  </tr>
+              </tbody>
+
+              <tbody *ngIf="isEdiOrder">
+                <tr *ngFor="let icode of selectedItems">
+                  <td>{{icode.itemcode}}</td>
+                  <td>
+                    <button type="button" (click)="RemovItemById(icode.id)" class="btn btn-danger m-1"><i class="fa fa-trash" style="font-size:14px"></i></button>
+                  </td>
+                </tr>
+            </tbody>
+              </table>
+            </div>
+            <div class="form-button">
+              <button type="submit" (click)="SubmitForm()">Create</button>
+          </div>
+            
+          </div>
+          
+        </div>
+        
+    </div>
+                   
+       
+    
+    <div class="content-table">
+      <input type="text" id="search" name="search" placeholder="Search" [(ngModel)]="searchText">
+      <table>
+        <tr>
+          <th>Order Id</th>
+          <th>Customer</th>
+          <th>Date</th>
+          <th>Cost</th>
+          <th>Employee</th>
+          <th>Item Code</th>
+          <th>Modify</th>
+        </tr>
+        <tr *ngFor="let orderObj of orders | search:searchText">
+          <td>{{orderObj.orderid}}</td>
+          <td>{{orderObj.customer[0].username}}</td>
+          <td>{{orderObj.orderdate}}</td>
+          <td>{{orderObj.cost}}</td>
+          <td>{{orderObj.employee}}</td>
+          <td>
+            <section *ngFor="let itemObj of orderObj.item">
+              <option>{{itemObj.itemcode}}</option>
+            </section>
+          </td>
+          <td>
+            <button type="button" (click)="GetOrderById(orderObj.id)" class="btn btn-primary m-1">
+            <i class="fa fa-pencil-square-o" style="font-size:14px"></i>
+          </button>
+          <button type="button" (click)="DeleteOrderById(orderObj.id)" class="btn btn-danger m-1">
+            <i class="fa fa-trash" style="font-size:14px"></i>
+          </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    
+    </div>
+    </body>
+    
+    
+    
+    

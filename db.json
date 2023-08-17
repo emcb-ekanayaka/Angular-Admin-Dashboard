@@ -1,0 +1,295 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "Customer": [
+    {
+      "username": "Anol",
+      "email": "anol@gmail.com",
+      "salary": "750",
+      "id": 4
+    },
+    {
+      "username": "nanzy",
+      "email": "nanzy@gmail.com",
+      "salary": "50",
+      "id": 5
+    },
+    {
+      "username": "alex teo",
+      "email": "teo@gmail.com",
+      "salary": "400",
+      "id": 6
+    },
+    {
+      "username": "jze",
+      "email": "paul@gmail.com",
+      "salary": "650",
+      "id": 7
+    },
+    {
+      "username": "lay jay",
+      "email": "jay@gmail.com",
+      "salary": "100",
+      "id": 8
+    },
+    {
+      "username": "wiliyam",
+      "email": "willy@yahoo.com",
+      "salary": "790",
+      "id": 9
+    },
+    {
+      "username": "grace",
+      "email": "gr@gmail.com",
+      "salary": "600",
+      "id": 10
+    }
+  ],
+  "Item": [
+    {
+      "description": "lorem..erhhe",
+      "qty": "70",
+      "unitprice": "60",
+      "barcodeimg": "https://linkimage.co/popuyt.png",
+      "itemcode": "459-IT91",
+      "id": 1
+    },
+    {
+      "description": "lorem..erhhe",
+      "qty": "100",
+      "unitprice": "10",
+      "barcodeimg": "https://linkimage.co/ewq.png",
+      "itemcode": "458-IT96",
+      "id": 2
+    }
+  ],
+  "Order": [
+    {
+      "orderid": "O-7896",
+      "customer": [
+        {
+          "username": "jze",
+          "email": "paul@gmail.com",
+          "salary": "650",
+          "id": 7
+        }
+      ],
+      "orderdate": "2023-05-01",
+      "cost": "50",
+      "employee": "admin",
+      "item": [
+        {
+          "id": 1,
+          "itemcode": "458-IT96"
+        },
+        {
+          "description": "lorem..erhhe",
+          "qty": "100",
+          "unitprice": "10",
+          "barcodeimg": "https://linkimage.co/ewq.png",
+          "itemcode": "458-IT96",
+          "id": 2
+        }
+      ],
+      "id": 1
+    },
+    {
+      "orderid": "O-1111",
+      "customer": [
+        {
+          "username": "nanzy",
+          "email": "nanzy@gmail.com",
+          "salary": "50",
+          "id": 5
+        }
+      ],
+      "orderdate": "2023-08-12",
+      "cost": "200",
+      "employee": "admin",
+      "item": [
+        {
+          "description": "lorem..erhhe",
+          "qty": "100",
+          "unitprice": "10",
+          "barcodeimg": "https://linkimage.co/ewq.png",
+          "itemcode": "458-IT96",
+          "id": 2
+        },
+        {
+          "description": "lorem..erhhe",
+          "qty": "70",
+          "unitprice": "60",
+          "barcodeimg": "https://linkimage.co/popuyt.png",
+          "itemcode": "459-IT91",
+          "id": 1
+        }
+      ],
+      "id": 2
+    },
+    {
+      "orderid": "O-3333",
+      "customer": [
+        {
+          "username": "Anol",
+          "email": "anol@gmail.com",
+          "salary": "750",
+          "id": 4
+        }
+      ],
+      "orderdate": "2023-08-19",
+      "cost": "550",
+      "employee": "admin",
+      "item": [
+        {
+          "description": "lorem..erhhe",
+          "qty": "100",
+          "unitprice": "10",
+          "barcodeimg": "https://linkimage.co/ewq.png",
+          "itemcode": "458-IT96",
+          "id": 2
+        },
+        {
+          "description": "lorem..erhhe",
+          "qty": "70",
+          "unitprice": "60",
+          "barcodeimg": "https://linkimage.co/popuyt.png",
+          "itemcode": "459-IT91",
+          "id": 1
+        }
+      ],
+      "id": 3
+    }
+  ],
+  "Payment": [
+    {
+      "paymentcode": "IN-708",
+      "order": [
+        {
+          "orderid": "O-3333",
+          "customer": [
+            {
+              "username": "Anol",
+              "email": "anol@gmail.com",
+              "salary": "750",
+              "id": 4
+            }
+          ],
+          "orderdate": "2023-08-19",
+          "cost": "550",
+          "employee": "admin",
+          "item": [
+            {
+              "description": "lorem..erhhe",
+              "qty": "100",
+              "unitprice": "10",
+              "barcodeimg": "https://linkimage.co/ewq.png",
+              "itemcode": "458-IT96",
+              "id": 2
+            },
+            {
+              "description": "lorem..erhhe",
+              "qty": "70",
+              "unitprice": "60",
+              "barcodeimg": "https://linkimage.co/popuyt.png",
+              "itemcode": "459-IT91",
+              "id": 1
+            }
+          ],
+          "id": 3
+        }
+      ],
+      "payment": "$300",
+      "paymenttype": "banktransfer",
+      "paymentdate": "2023-01-05",
+      "id": 1
+    },
+    {
+      "paymentcode": "IN-709",
+      "order": [
+        {
+          "orderid": "O-7896",
+          "customer": [
+            {
+              "username": "jze",
+              "email": "paul@gmail.com",
+              "salary": "650",
+              "id": 7
+            }
+          ],
+          "orderdate": "2023-05-01",
+          "cost": "50",
+          "employee": "admin",
+          "item": [
+            {
+              "id": 1,
+              "itemcode": "458-IT96"
+            },
+            {
+              "description": "lorem..erhhe",
+              "qty": "100",
+              "unitprice": "10",
+              "barcodeimg": "https://linkimage.co/ewq.png",
+              "itemcode": "458-IT96",
+              "id": 2
+            }
+          ],
+          "id": 1
+        }
+      ],
+      "payment": "600",
+      "paymenttype": "online",
+      "paymentdate": "2023-08-19",
+      "id": 2
+    },
+    {
+      "paymentcode": "IN-711",
+      "order": [
+        {
+          "orderid": "O-3333",
+          "customer": [
+            {
+              "username": "Anol",
+              "email": "anol@gmail.com",
+              "salary": "750",
+              "id": 4
+            }
+          ],
+          "orderdate": "2023-08-19",
+          "cost": "550",
+          "employee": "admin",
+          "item": [
+            {
+              "description": "lorem..erhhe",
+              "qty": "100",
+              "unitprice": "10",
+              "barcodeimg": "https://linkimage.co/ewq.png",
+              "itemcode": "458-IT96",
+              "id": 2
+            },
+            {
+              "description": "lorem..erhhe",
+              "qty": "70",
+              "unitprice": "60",
+              "barcodeimg": "https://linkimage.co/popuyt.png",
+              "itemcode": "459-IT91",
+              "id": 1
+            }
+          ],
+          "id": 3
+        }
+      ],
+      "payment": "750",
+      "paymenttype": "banktransfer",
+      "paymentdate": "2023-08-16",
+      "id": 3
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="form_wrapper">
+    <div class="form_container">
+      <div class="title_container">
+        <h2>Login Form</h2>
+      </div>
+      <div class="row clearfix">
+        <div>
+          <form>
+            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+              <input type="text" name="username" placeholder="User Name"  required [(ngModel)]="signIpObject.username"/>
+            </div>
+            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+              <input type="password" name="password" placeholder="Password" required [(ngModel)]="signIpObject.password"/>
+            </div>
+            <input class="button" type="submit" value="Login" (click)="onSignIn()"/>
+            <div class="title_container">
+                <p>Didn't Register? <a routerLink="/register">Sign up</a> here</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+

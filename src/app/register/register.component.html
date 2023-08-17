@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="form_wrapper">
+    <div class="form_container" >
+      <div class="title_container">
+        <h2>Registration Form</h2>
+      </div>
+      <div class="row clearfix">
+        <div>
+          <form >
+            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                <input type="text" name="name" placeholder="Your Name"  [(ngModel)]="signUpObject.username" required/>
+              </div>
+            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+              <input type="email" name="email" placeholder="Email" [(ngModel)]="signUpObject.email" required/>
+            </div>
+            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+              <input type="password" name="password" placeholder="Password" [(ngModel)]="signUpObject.password" required/>
+            </div>
+    
+            <input class="button" type="submit" value="Register" (click)="onSignUp()"/>
+            <div class="title_container">
+                <p>Already Registered? <a routerLink="/login">Sign in</a> here</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
